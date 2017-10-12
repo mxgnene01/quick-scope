@@ -48,7 +48,7 @@ if !exists('g:qs_highlight_on_keys')
   augroup END
 else
   " Highlight on key press. Set an 'augmented' mapping for each defined key.
-  for motion in filter(g:qs_highlight_on_keys, 'v:val =~# "^[fFtT]$"')
+  for motion in filter(g:qs_highlight_on_keys, 'v:val =~# "^[fF]$"')
     execute printf('noremap <unique> <silent> <expr> %s <sid>ready() . <sid>aim("%s") . <sid>reload() . <sid>double_tap()', motion, motion)
   endfor
 endif
